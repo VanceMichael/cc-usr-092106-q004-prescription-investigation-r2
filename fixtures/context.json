@@ -1,0 +1,10 @@
+{
+  "domain": "prescription-investigation",
+  "version": 1,
+  "facts": [
+    "调查会结合结算、监控、资金和物流信息",
+    "单条疑点不宜立即打草惊蛇",
+    "阶段结论需要保留采用的证据"
+  ],
+  "sample_id": "sample-004"
+}
