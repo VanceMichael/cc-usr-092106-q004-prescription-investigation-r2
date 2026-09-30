@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "受控证据室决定日志",
+  "description": "只增不改的事件日志；证据室状态完全由事件序列重建。",
+  "type": "object",
+  "required": ["domain", "log_version", "events"],
+  "properties": {
+    "domain": { "const": "prescription-investigation" },
+    "log_version": { "type": "integer", "minimum": 1 },
+    "case_id": { "type": ["string", "null"] },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["seq", "timestamp", "actor", "kind", "payload", "prev_hash", "hash"],
+        "properties": {
+          "seq": { "type": "integer", "minimum": 0 },
+          "timestamp": { "type": "string" },
+          "actor": { "type": "string", "minLength": 1 },
+          "kind": { "type": "string", "minLength": 1 },
+          "payload": { "type": "object" },
+          "prev_hash": { "type": "string", "minLength": 1 },
+          "hash": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$|^GENESIS$"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

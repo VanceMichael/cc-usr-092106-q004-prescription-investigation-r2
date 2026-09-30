@@ -1,0 +1,809 @@
+{
+  "domain": "prescription-investigation",
+  "log_version": 1,
+  "case_id": "YB-2026-051X",
+  "events": [
+    {
+      "seq": 0,
+      "timestamp": "2026-03-01T09:00:00+08:00",
+      "actor": "review-zheng",
+      "kind": "case_opened",
+      "payload": {
+        "case_id": "YB-2026-051X",
+        "title": "异常开药及疑似转售调查（虚构示例）"
+      },
+      "prev_hash": "GENESIS",
+      "hash": "6435b4387f281f5007aa91c3938d2f26590a34622391e9a87d99b3f6398882a8"
+    },
+    {
+      "seq": 1,
+      "timestamp": "2026-03-02T10:00:00+08:00",
+      "actor": "lead-zhou",
+      "kind": "subject_registered",
+      "payload": {
+        "subject_id": "S-01",
+        "label": "张甲（虚构化名）",
+        "role": "疑似违规参保人",
+        "note": "同日开药疑点名单对象"
+      },
+      "prev_hash": "6435b4387f281f5007aa91c3938d2f26590a34622391e9a87d99b3f6398882a8",
+      "hash": "a6804795a213ba50383c8bff687d60cc279bb77fd32642e9d3018f3b6d60e8d4"
+    },
+    {
+      "seq": 2,
+      "timestamp": "2026-03-02T10:05:00+08:00",
+      "actor": "lead-zhou",
+      "kind": "subject_registered",
+      "payload": {
+        "subject_id": "S-02",
+        "label": "李乙（虚构化名）",
+        "role": "疑似收药转卖人",
+        "note": ""
+      },
+      "prev_hash": "a6804795a213ba50383c8bff687d60cc279bb77fd32642e9d3018f3b6d60e8d4",
+      "hash": "f5511f57303ccf395f2d21560ac02cd324f491da00a805c959d7bc473e390136"
+    },
+    {
+      "seq": 3,
+      "timestamp": "2026-03-02T10:10:00+08:00",
+      "actor": "lead-zhou",
+      "kind": "subject_registered",
+      "payload": {
+        "subject_id": "S-03",
+        "label": "王丙（虚构化名）",
+        "role": "需排除的同日开药患者",
+        "note": ""
+      },
+      "prev_hash": "f5511f57303ccf395f2d21560ac02cd324f491da00a805c959d7bc473e390136",
+      "hash": "7a0cadd2ecb05e16ff710e69cc6694414124fd349e9999a4524f83227a1c707a"
+    },
+    {
+      "seq": 4,
+      "timestamp": "2026-03-02T11:00:00+08:00",
+      "actor": "lead-zhou",
+      "kind": "hypothesis_registered",
+      "payload": {
+        "hypothesis_id": "H-01",
+        "statement": "张甲疑似长期超量开取降糖药 X，经李乙回收并转售外地",
+        "subject_ids": [
+          "S-01",
+          "S-02"
+        ],
+        "basis": "同日开药疑点名单仅为线索，需多源材料印证"
+      },
+      "prev_hash": "7a0cadd2ecb05e16ff710e69cc6694414124fd349e9999a4524f83227a1c707a",
+      "hash": "549ea0a31a15de68c9f893d793fadbc336720baa6171bb72244f53d19f56841c"
+    },
+    {
+      "seq": 5,
+      "timestamp": "2026-03-03T09:30:00+08:00",
+      "actor": "review-zheng",
+      "kind": "authorization_granted",
+      "payload": {
+        "authorization_id": "AUTH-01",
+        "categories": [
+          "settlement",
+          "surveillance"
+        ],
+        "teams": [
+          "lead",
+          "surveillance"
+        ],
+        "valid_from": "2026-03-01T00:00:00+08:00",
+        "valid_to": "2026-06-30T23:59:59+08:00",
+        "min_stage": "initial",
+        "basis": "初查阶段核实取药人与结算人身份",
+        "supplemental_of": null
+      },
+      "prev_hash": "549ea0a31a15de68c9f893d793fadbc336720baa6171bb72244f53d19f56841c",
+      "hash": "4c4e5b48378d958220cadad4cf7e64caca80ff503cae23afc2d73a6029ad80c6"
+    },
+    {
+      "seq": 6,
+      "timestamp": "2026-03-05T15:00:00+08:00",
+      "actor": "lead-zhou",
+      "kind": "material_registered",
+      "payload": {
+        "material_id": "M-SETTLE-01",
+        "category": "settlement",
+        "title": "张甲 2024-2026 年结算明细（虚构导出）",
+        "source": "市医保平台结算库（虚构）",
+        "obtained_at": "2026-03-05T14:00:00+08:00",
+        "checksum": "sha256:0de1ee8109c09c68add054ae359f7b46895db7fad52e0f3621773696d613db67",
+        "authorization_id": "AUTH-01",
+        "collected_by": "lead",
+        "custodian": "证据室/线索组保管柜",
+        "hypothesis_ids": [
+          "H-01"
+        ]
+      },
+      "prev_hash": "4c4e5b48378d958220cadad4cf7e64caca80ff503cae23afc2d73a6029ad80c6",
+      "hash": "67a4add520455ef1477e76a80058d8e07325bad850c120441055d30b069d72f5"
+    },
+    {
+      "seq": 7,
+      "timestamp": "2026-03-05T15:05:00+08:00",
+      "actor": "lead-zhou",
+      "kind": "material_registered",
+      "payload": {
+        "material_id": "M-SETTLE-02",
+        "category": "settlement",
+        "title": "王丙 2026-03-05 同日结算记录（虚构导出）",
+        "source": "市医保平台结算库（虚构）",
+        "obtained_at": "2026-03-05T14:05:00+08:00",
+        "checksum": "sha256:b06fa7ca79a273700a6cbae4cf7230e150470d43562a1b29e81c0edabe7ad21e",
+        "authorization_id": "AUTH-01",
+        "collected_by": "lead",
+        "custodian": "证据室/线索组保管柜",
+        "hypothesis_ids": [
+          "H-01"
+        ]
+      },
+      "prev_hash": "67a4add520455ef1477e76a80058d8e07325bad850c120441055d30b069d72f5",
+      "hash": "8c37be58e3447d3fa49eb9a599e9ddecf5b840125edbdc993d549459f97a6324"
+    },
+    {
+      "seq": 8,
+      "timestamp": "2026-03-06T11:00:00+08:00",
+      "actor": "surveillance-wu",
+      "kind": "material_registered",
+      "payload": {
+        "material_id": "M-VIDEO-01",
+        "category": "surveillance",
+        "title": "2026-03-05 门诊取药窗口监控片段（虚构）",
+        "source": "某医院安防室（虚构）",
+        "obtained_at": "2026-03-06T10:00:00+08:00",
+        "checksum": "sha256:678a142ac1598904aece6b5ca3e864e00bfa75411ee05c5db9f7ca7e3f7d2660",
+        "authorization_id": "AUTH-01",
+        "collected_by": "surveillance",
+        "custodian": "证据室/监控组保管柜",
+        "hypothesis_ids": [
+          "H-01"
+        ]
+      },
+      "prev_hash": "8c37be58e3447d3fa49eb9a599e9ddecf5b840125edbdc993d549459f97a6324",
+      "hash": "1a574d7a0a7331ea747c0fb88b0359a726dd7264711b4c208e0129748d2b2b35"
+    },
+    {
+      "seq": 9,
+      "timestamp": "2026-03-07T09:00:00+08:00",
+      "actor": "surveillance-wu",
+      "kind": "candidate_link_proposed",
+      "payload": {
+        "link_id": "L-01",
+        "material_a": "M-VIDEO-01",
+        "material_b": "M-SETTLE-01",
+        "link_kind": "identity",
+        "basis": "画面取药时间窗与张甲结算时间相差 3 分钟，体貌特征初判一致",
+        "confidence": 0.82
+      },
+      "prev_hash": "1a574d7a0a7331ea747c0fb88b0359a726dd7264711b4c208e0129748d2b2b35",
+      "hash": "645289d4667aa758f86f15d47a078b44ae2cd8282e0122e5ddc4988bd24cd2a8"
+    },
+    {
+      "seq": 10,
+      "timestamp": "2026-03-07T09:05:00+08:00",
+      "actor": "surveillance-wu",
+      "kind": "candidate_link_proposed",
+      "payload": {
+        "link_id": "L-02",
+        "material_a": "M-VIDEO-01",
+        "material_b": "M-SETTLE-02",
+        "link_kind": "identity",
+        "basis": "同日另有王丙结算记录，系统按同药同日推送的候选，需人工排除",
+        "confidence": 0.31
+      },
+      "prev_hash": "645289d4667aa758f86f15d47a078b44ae2cd8282e0122e5ddc4988bd24cd2a8",
+      "hash": "80d671cb005fd69da045eb67ef3cfe024fd33735a21f7b5254906be5d9e4f59e"
+    },
+    {
+      "seq": 11,
+      "timestamp": "2026-03-08T14:00:00+08:00",
+      "actor": "review-zheng",
+      "kind": "identity_reviewed",
+      "payload": {
+        "link_id": "L-02",
+        "verdict": "rejected",
+        "reason": "王丙当日持本人处方在另一窗口取药，衣着与影像不符，排除"
+      },
+      "prev_hash": "80d671cb005fd69da045eb67ef3cfe024fd33735a21f7b5254906be5d9e4f59e",
+      "hash": "5581f8a95d280e080ddae2c1eeb19ef665aecbcb13308aeaf8421052f901949a"
+    },
+    {
+      "seq": 12,
+      "timestamp": "2026-03-08T14:30:00+08:00",
+      "actor": "review-zheng",
+      "kind": "identity_reviewed",
+      "payload": {
+        "link_id": "L-01",
+        "verdict": "confirmed",
+        "reason": "结合挂号抓拍与取药签字，确认监控取药人即张甲本人"
+      },
+      "prev_hash": "5581f8a95d280e080ddae2c1eeb19ef665aecbcb13308aeaf8421052f901949a",
+      "hash": "b91f9a377033d74b6dfe4cf57c6b6d2dd996355350d1e1abe595b4ad621ce6a1"
+    },
+    {
+      "seq": 13,
+      "timestamp": "2026-03-09T10:00:00+08:00",
+      "actor": "review-zheng",
+      "kind": "lead_escalated",
+      "payload": {
+        "hypothesis_id": "H-01",
+        "reason": "结算异常与取药监控经复核指向同一人，具备正式调查必要"
+      },
+      "prev_hash": "b91f9a377033d74b6dfe4cf57c6b6d2dd996355350d1e1abe595b4ad621ce6a1",
+      "hash": "8b3f676f130bb4deb5cb91291bb41c634546fffc7193622c862cadc26ce85b9a"
+    },
+    {
+      "seq": 14,
+      "timestamp": "2026-04-03T11:00:00+08:00",
+      "actor": "surveillance-wu",
+      "kind": "material_registered",
+      "payload": {
+        "material_id": "M-VIDEO-02",
+        "category": "surveillance",
+        "title": "2026-04-02 取药窗口监控片段（虚构）",
+        "source": "某医院安防室（虚构）",
+        "obtained_at": "2026-04-03T10:00:00+08:00",
+        "checksum": "sha256:0f8122a5af3a345287a9ab77e03b7e9dd9dab40301b0a015a1c84e4857a3746f",
+        "authorization_id": "AUTH-01",
+        "collected_by": "surveillance",
+        "custodian": "证据室/监控组保管柜",
+        "hypothesis_ids": [
+          "H-01"
+        ]
+      },
+      "prev_hash": "8b3f676f130bb4deb5cb91291bb41c634546fffc7193622c862cadc26ce85b9a",
+      "hash": "6b39f478640842df9d0c7ab288d17c21d5e3db900cbea82f813e87e9ed4c185b"
+    },
+    {
+      "seq": 15,
+      "timestamp": "2026-04-04T09:00:00+08:00",
+      "actor": "surveillance-wu",
+      "kind": "candidate_link_proposed",
+      "payload": {
+        "link_id": "L-03",
+        "material_a": "M-VIDEO-02",
+        "material_b": "M-SETTLE-01",
+        "link_kind": "identity",
+        "basis": "4 月 2 日片段中取药人疑似张甲，待与当月结算明细比对",
+        "confidence": 0.64
+      },
+      "prev_hash": "6b39f478640842df9d0c7ab288d17c21d5e3db900cbea82f813e87e9ed4c185b",
+      "hash": "0d88ceac3236a8707f532382db7b65752d4cad33e7ddd4ce541c4b9d994d7f6e"
+    },
+    {
+      "seq": 16,
+      "timestamp": "2026-03-10T16:00:00+08:00",
+      "actor": "surveillance-wu",
+      "kind": "parallel_analysis",
+      "payload": {
+        "analysis_id": "A-01",
+        "team": "surveillance",
+        "material_ids": [
+          "M-VIDEO-01"
+        ],
+        "summary": "取药人面部与步态特征摘录，供复核使用",
+        "confirms": [
+          "L-01"
+        ]
+      },
+      "prev_hash": "0d88ceac3236a8707f532382db7b65752d4cad33e7ddd4ce541c4b9d994d7f6e",
+      "hash": "f0ee2294e358f766edc976a4cc5c019a936cdb62894442eb5d24931d7b5e4e15"
+    },
+    {
+      "seq": 17,
+      "timestamp": "2026-03-10T16:20:00+08:00",
+      "actor": "lead-zhou",
+      "kind": "parallel_analysis",
+      "payload": {
+        "analysis_id": "A-02",
+        "team": "lead",
+        "material_ids": [
+          "M-SETTLE-01"
+        ],
+        "summary": "张甲 14 个月内开药频次为同类患者 6 倍，剂量超出常规疗程",
+        "confirms": []
+      },
+      "prev_hash": "f0ee2294e358f766edc976a4cc5c019a936cdb62894442eb5d24931d7b5e4e15",
+      "hash": "9c5b367a108e936f3814ca739cf0c19a1337ca51ae16658bb0bc43ad734dc4ff"
+    },
+    {
+      "seq": 18,
+      "timestamp": "2026-03-12T17:00:00+08:00",
+      "actor": "review-zheng",
+      "kind": "stage_conclusion_submitted",
+      "payload": {
+        "stage": "initial",
+        "facts": [
+          {
+            "fact_id": "F-INIT-1",
+            "statement": "2026-03-05 监控取药人与结算记录人张甲为同一人",
+            "material_refs": [
+              "M-SETTLE-01",
+              "M-VIDEO-01"
+            ],
+            "link_refs": [
+              "L-01"
+            ]
+          }
+        ],
+        "pending": [
+          {
+            "item_id": "P-INIT-1",
+            "statement": "2026-04-02 取药人是否同为张甲，尚待复核",
+            "link_refs": [
+              "L-03"
+            ]
+          }
+        ],
+        "frozen_materials": [
+          {
+            "material_id": "M-SETTLE-01",
+            "checksum": "sha256:0de1ee8109c09c68add054ae359f7b46895db7fad52e0f3621773696d613db67",
+            "category": "settlement",
+            "custodian_at_freeze": "证据室/线索组保管柜"
+          },
+          {
+            "material_id": "M-VIDEO-01",
+            "checksum": "sha256:678a142ac1598904aece6b5ca3e864e00bfa75411ee05c5db9f7ca7e3f7d2660",
+            "category": "surveillance",
+            "custodian_at_freeze": "证据室/监控组保管柜"
+          },
+          {
+            "material_id": "M-VIDEO-02",
+            "checksum": "sha256:0f8122a5af3a345287a9ab77e03b7e9dd9dab40301b0a015a1c84e4857a3746f",
+            "category": "surveillance",
+            "custodian_at_freeze": "证据室/监控组保管柜"
+          }
+        ],
+        "frozen_event_seq": 18,
+        "freeze_hash": "9c5b367a108e936f3814ca739cf0c19a1337ca51ae16658bb0bc43ad734dc4ff"
+      },
+      "prev_hash": "9c5b367a108e936f3814ca739cf0c19a1337ca51ae16658bb0bc43ad734dc4ff",
+      "hash": "75630786ecd936503d081ae0bacb0b5b94eae2751011ccd3c0a296d45b1375ee"
+    },
+    {
+      "seq": 19,
+      "timestamp": "2026-03-13T09:00:00+08:00",
+      "actor": "review-zheng",
+      "kind": "authorization_granted",
+      "payload": {
+        "authorization_id": "AUTH-02",
+        "categories": [
+          "traceability",
+          "finance",
+          "logistics"
+        ],
+        "teams": [
+          "lead",
+          "fund_flow",
+          "logistics"
+        ],
+        "valid_from": "2026-03-13T00:00:00+08:00",
+        "valid_to": "2026-08-31T23:59:59+08:00",
+        "min_stage": "corroboration",
+        "basis": "印证阶段追查药品流向、资金与寄递",
+        "supplemental_of": "AUTH-01"
+      },
+      "prev_hash": "75630786ecd936503d081ae0bacb0b5b94eae2751011ccd3c0a296d45b1375ee",
+      "hash": "76b66c862fe54407309c9179a14a45cea6deeb28e1453d86f5812a80029a49f9"
+    },
+    {
+      "seq": 20,
+      "timestamp": "2026-04-07T11:00:00+08:00",
+      "actor": "lead-zhou",
+      "kind": "material_registered",
+      "payload": {
+        "material_id": "M-TRACE-01",
+        "category": "traceability",
+        "title": "涉案药品追溯码批量流向表（虚构）",
+        "source": "药品追溯平台（虚构）",
+        "obtained_at": "2026-04-07T10:00:00+08:00",
+        "checksum": "sha256:0fb935c3286b196e03c7b6a41d0a4e0b0a73b5efc6fe4590c879d4c3edf252dc",
+        "authorization_id": "AUTH-02",
+        "collected_by": "lead",
+        "custodian": "证据室/线索组保管柜",
+        "hypothesis_ids": [
+          "H-01"
+        ]
+      },
+      "prev_hash": "76b66c862fe54407309c9179a14a45cea6deeb28e1453d86f5812a80029a49f9",
+      "hash": "bb4eefa33c22c93d31f9c7a96f3736b0132200ce39b5c65e0e12bc49d305e010"
+    },
+    {
+      "seq": 21,
+      "timestamp": "2026-04-08T11:00:00+08:00",
+      "actor": "fund_flow-chen",
+      "kind": "material_registered",
+      "payload": {
+        "material_id": "M-FIN-01",
+        "category": "finance",
+        "title": "张甲与李乙账户资金往来说明（虚构）",
+        "source": "反假协查反馈（虚构）",
+        "obtained_at": "2026-04-08T10:00:00+08:00",
+        "checksum": "sha256:c3059716ece6545978a5d00412d7fcb236b93892e0dd912c295f8b7f2fa072f6",
+        "authorization_id": "AUTH-02",
+        "collected_by": "fund_flow",
+        "custodian": "证据室/资金组保管柜",
+        "hypothesis_ids": [
+          "H-01"
+        ]
+      },
+      "prev_hash": "bb4eefa33c22c93d31f9c7a96f3736b0132200ce39b5c65e0e12bc49d305e010",
+      "hash": "a274770e6382836b85b5b49a72d96249a0ffeaaf35c4196ebb51c5abb19b37d9"
+    },
+    {
+      "seq": 22,
+      "timestamp": "2026-04-08T16:00:00+08:00",
+      "actor": "fund_flow-chen",
+      "kind": "material_registered",
+      "payload": {
+        "material_id": "M-FIN-02",
+        "category": "finance",
+        "title": "一份来源标注不清的转账截图（虚构）",
+        "source": "匿名来信附件（虚构）",
+        "obtained_at": "2026-04-08T15:00:00+08:00",
+        "checksum": "sha256:e30df9ed9b84b1c93c2f063b1e1735461fb138a6c82e442875fc658ce12a98a4",
+        "authorization_id": "AUTH-02",
+        "collected_by": "fund_flow",
+        "custodian": "证据室/资金组保管柜",
+        "hypothesis_ids": [
+          "H-01"
+        ]
+      },
+      "prev_hash": "a274770e6382836b85b5b49a72d96249a0ffeaaf35c4196ebb51c5abb19b37d9",
+      "hash": "f52115bb093a712b7d0c6a15f3b9628404eb22eb61df5bc06c72a2d00b31f300"
+    },
+    {
+      "seq": 23,
+      "timestamp": "2026-04-09T11:00:00+08:00",
+      "actor": "logistics-lin",
+      "kind": "material_registered",
+      "payload": {
+        "material_id": "M-LOG-01",
+        "category": "logistics",
+        "title": "寄往外地的快递面单及轨迹 7 票（虚构）",
+        "source": "寄递企业协查反馈（虚构）",
+        "obtained_at": "2026-04-09T10:00:00+08:00",
+        "checksum": "sha256:d3e7b12773ddffa2efec336be4c966ddbcffe0eb9538bf0c8c872f910c0bead8",
+        "authorization_id": "AUTH-02",
+        "collected_by": "logistics",
+        "custodian": "证据室/物流组保管柜",
+        "hypothesis_ids": [
+          "H-01"
+        ]
+      },
+      "prev_hash": "f52115bb093a712b7d0c6a15f3b9628404eb22eb61df5bc06c72a2d00b31f300",
+      "hash": "aa6c28713e808e09689ff981c51f04d41cd5f53bc88727e4fcb0f231455229b6"
+    },
+    {
+      "seq": 24,
+      "timestamp": "2026-04-11T11:00:00+08:00",
+      "actor": "logistics-lin",
+      "kind": "material_registered",
+      "payload": {
+        "material_id": "M-LOG-02",
+        "category": "logistics",
+        "title": "另一条可疑收件地址的寄递记录（虚构）",
+        "source": "寄递企业补充反馈（虚构）",
+        "obtained_at": "2026-04-11T10:00:00+08:00",
+        "checksum": "sha256:78459b0e0abab36a04fbc9cc93c130dd982df2c832c4dca693ca24055062ab7e",
+        "authorization_id": "AUTH-02",
+        "collected_by": "logistics",
+        "custodian": "证据室/物流组保管柜",
+        "hypothesis_ids": [
+          "H-01"
+        ]
+      },
+      "prev_hash": "aa6c28713e808e09689ff981c51f04d41cd5f53bc88727e4fcb0f231455229b6",
+      "hash": "7e84d5f51480fe27be9b48ec1910e0e989b785e553a5323f2a3fef7ca3ea248e"
+    },
+    {
+      "seq": 25,
+      "timestamp": "2026-04-10T09:30:00+08:00",
+      "actor": "review-zheng",
+      "kind": "material_invalidated",
+      "payload": {
+        "material_id": "M-FIN-02",
+        "reason": "截图来源无法核验，与银行正式反馈不一致，不得作为证据"
+      },
+      "prev_hash": "7e84d5f51480fe27be9b48ec1910e0e989b785e553a5323f2a3fef7ca3ea248e",
+      "hash": "a7894bb3ca6ce542b0d2e94f6c6fc28a5b396b8e20d6e3d3d0e3eb46b932c049"
+    },
+    {
+      "seq": 26,
+      "timestamp": "2026-04-12T09:00:00+08:00",
+      "actor": "fund_flow-chen",
+      "kind": "candidate_link_proposed",
+      "payload": {
+        "link_id": "L-04",
+        "material_a": "M-TRACE-01",
+        "material_b": "M-FIN-01",
+        "link_kind": "event",
+        "basis": "追溯码显示批量药品转出日与李乙转账日高度重合",
+        "confidence": 0.77
+      },
+      "prev_hash": "a7894bb3ca6ce542b0d2e94f6c6fc28a5b396b8e20d6e3d3d0e3eb46b932c049",
+      "hash": "d82be3acafe42754696a680cbf437b94b0b825e62804e94a382f169b817f9f5d"
+    },
+    {
+      "seq": 27,
+      "timestamp": "2026-04-12T09:10:00+08:00",
+      "actor": "logistics-lin",
+      "kind": "candidate_link_proposed",
+      "payload": {
+        "link_id": "L-05",
+        "material_a": "M-TRACE-01",
+        "material_b": "M-LOG-01",
+        "link_kind": "event",
+        "basis": "快递揽收时间与药品追溯码最后扫码地点、时间吻合",
+        "confidence": 0.8
+      },
+      "prev_hash": "d82be3acafe42754696a680cbf437b94b0b825e62804e94a382f169b817f9f5d",
+      "hash": "781bcd502074547d076eb1492e8910e02dc8c9a2e1424af90ccdae853d33bd5c"
+    },
+    {
+      "seq": 28,
+      "timestamp": "2026-04-12T09:20:00+08:00",
+      "actor": "lead-zhou",
+      "kind": "candidate_link_proposed",
+      "payload": {
+        "link_id": "L-06",
+        "material_a": "M-SETTLE-01",
+        "material_b": "M-TRACE-01",
+        "link_kind": "event",
+        "basis": "张甲结算明细中药品批号与追溯表中流向李乙的批号一致",
+        "confidence": 0.9
+      },
+      "prev_hash": "781bcd502074547d076eb1492e8910e02dc8c9a2e1424af90ccdae853d33bd5c",
+      "hash": "523cedd9c9f069e553b50d1feb84fc34931ec5e777bd263f015059116831d5b6"
+    },
+    {
+      "seq": 29,
+      "timestamp": "2026-04-12T09:30:00+08:00",
+      "actor": "logistics-lin",
+      "kind": "candidate_link_proposed",
+      "payload": {
+        "link_id": "L-07",
+        "material_a": "M-LOG-01",
+        "material_b": "M-LOG-02",
+        "link_kind": "event",
+        "basis": "两批寄递疑似同一收件网络，尚未取得收件人证言",
+        "confidence": 0.55
+      },
+      "prev_hash": "523cedd9c9f069e553b50d1feb84fc34931ec5e777bd263f015059116831d5b6",
+      "hash": "27a48d685ad0726b80adab9b469b04b2e1e095d25f4a18f5085b71b829312b1f"
+    },
+    {
+      "seq": 30,
+      "timestamp": "2026-04-13T10:00:00+08:00",
+      "actor": "review-zheng",
+      "kind": "identity_reviewed",
+      "payload": {
+        "link_id": "L-03",
+        "verdict": "confirmed",
+        "reason": "4 月 2 日签字与挂号抓拍再次指向张甲本人"
+      },
+      "prev_hash": "27a48d685ad0726b80adab9b469b04b2e1e095d25f4a18f5085b71b829312b1f",
+      "hash": "a714f3a9d0e46426c16da5e76a0ccdd649a56ee7b8879d87b572a939e591a34b"
+    },
+    {
+      "seq": 31,
+      "timestamp": "2026-04-13T10:30:00+08:00",
+      "actor": "review-zheng",
+      "kind": "identity_reviewed",
+      "payload": {
+        "link_id": "L-04",
+        "verdict": "confirmed",
+        "reason": "银行流水备注与金额能够对应药品批次数量"
+      },
+      "prev_hash": "a714f3a9d0e46426c16da5e76a0ccdd649a56ee7b8879d87b572a939e591a34b",
+      "hash": "fa7c41b7ac437f3e851e5ccb2f3a5edbc17b82142a97311fd7bae479fc7ff0f1"
+    },
+    {
+      "seq": 32,
+      "timestamp": "2026-04-13T11:00:00+08:00",
+      "actor": "review-zheng",
+      "kind": "identity_reviewed",
+      "payload": {
+        "link_id": "L-05",
+        "verdict": "confirmed",
+        "reason": "面单手机号与揽收影像和追溯扫码记录互证"
+      },
+      "prev_hash": "fa7c41b7ac437f3e851e5ccb2f3a5edbc17b82142a97311fd7bae479fc7ff0f1",
+      "hash": "0059a88c70aa93519664ed0b407329bc7149547e2546f523d7b08f739627b28a"
+    },
+    {
+      "seq": 33,
+      "timestamp": "2026-04-13T11:30:00+08:00",
+      "actor": "review-zheng",
+      "kind": "identity_reviewed",
+      "payload": {
+        "link_id": "L-06",
+        "verdict": "confirmed",
+        "reason": "批号重合率 92%，排除同号偶合"
+      },
+      "prev_hash": "0059a88c70aa93519664ed0b407329bc7149547e2546f523d7b08f739627b28a",
+      "hash": "a2924259194184d547b022dd95b5ff0ec695bf106a0115ab9b0412ed77a06d7a"
+    },
+    {
+      "seq": 34,
+      "timestamp": "2026-04-14T08:30:00+08:00",
+      "actor": "review-zheng",
+      "kind": "access_granted",
+      "payload": {
+        "loan_id": "LOAN-01",
+        "material_id": "M-TRACE-01",
+        "borrower_team": "surveillance",
+        "purpose": "核对另一段监控中出现的药盒批号，阅毕归还",
+        "valid_from": "2026-04-14T09:00:00+08:00",
+        "valid_to": "2026-04-21T18:00:00+08:00"
+      },
+      "prev_hash": "a2924259194184d547b022dd95b5ff0ec695bf106a0115ab9b0412ed77a06d7a",
+      "hash": "81dc1b4b8e0d4ff1d15f6b82702ed84c581b440adfe5ed74f82d1b0c83502494"
+    },
+    {
+      "seq": 35,
+      "timestamp": "2026-04-15T15:00:00+08:00",
+      "actor": "fund_flow-chen",
+      "kind": "parallel_analysis",
+      "payload": {
+        "analysis_id": "A-03",
+        "team": "fund_flow",
+        "material_ids": [
+          "M-FIN-01",
+          "M-TRACE-01"
+        ],
+        "summary": "12 笔转账按药品批次计价，金额与转售行情吻合",
+        "confirms": [
+          "L-04"
+        ]
+      },
+      "prev_hash": "81dc1b4b8e0d4ff1d15f6b82702ed84c581b440adfe5ed74f82d1b0c83502494",
+      "hash": "5a29bfb7468e56940f69849d1fab774734e0efa6f5e03e2bb36fa191d706c823"
+    },
+    {
+      "seq": 36,
+      "timestamp": "2026-04-15T15:30:00+08:00",
+      "actor": "logistics-lin",
+      "kind": "parallel_analysis",
+      "payload": {
+        "analysis_id": "A-04",
+        "team": "logistics",
+        "material_ids": [
+          "M-LOG-01",
+          "M-TRACE-01"
+        ],
+        "summary": "7 票寄递的寄件署名与张甲通信号关联，收件地集中",
+        "confirms": [
+          "L-05"
+        ]
+      },
+      "prev_hash": "5a29bfb7468e56940f69849d1fab774734e0efa6f5e03e2bb36fa191d706c823",
+      "hash": "7a55d5434d3326ed238c3a823d3239e8213cc1971057dcc1195878cfc32f5298"
+    },
+    {
+      "seq": 37,
+      "timestamp": "2026-04-20T17:00:00+08:00",
+      "actor": "review-zheng",
+      "kind": "stage_conclusion_submitted",
+      "payload": {
+        "stage": "corroboration",
+        "facts": [
+          {
+            "fact_id": "F-CORR-1",
+            "statement": "张甲两次取药（2026-03-05、2026-04-02）均经复核确认",
+            "material_refs": [
+              "M-SETTLE-01",
+              "M-VIDEO-01",
+              "M-VIDEO-02"
+            ],
+            "link_refs": [
+              "L-01",
+              "L-03"
+            ]
+          },
+          {
+            "fact_id": "F-CORR-2",
+            "statement": "张甲名下药品经追溯码流向李乙，并伴随对应资金与寄递，相互印证",
+            "material_refs": [
+              "M-FIN-01",
+              "M-LOG-01",
+              "M-SETTLE-01",
+              "M-TRACE-01"
+            ],
+            "link_refs": [
+              "L-04",
+              "L-05",
+              "L-06"
+            ]
+          }
+        ],
+        "pending": [
+          {
+            "item_id": "P-CORR-1",
+            "statement": "第二收件地址是否属于同一收药网络，待补充证言后复核",
+            "link_refs": [
+              "L-07"
+            ]
+          }
+        ],
+        "frozen_materials": [
+          {
+            "material_id": "M-FIN-01",
+            "checksum": "sha256:c3059716ece6545978a5d00412d7fcb236b93892e0dd912c295f8b7f2fa072f6",
+            "category": "finance",
+            "custodian_at_freeze": "证据室/资金组保管柜"
+          },
+          {
+            "material_id": "M-LOG-01",
+            "checksum": "sha256:d3e7b12773ddffa2efec336be4c966ddbcffe0eb9538bf0c8c872f910c0bead8",
+            "category": "logistics",
+            "custodian_at_freeze": "证据室/物流组保管柜"
+          },
+          {
+            "material_id": "M-LOG-02",
+            "checksum": "sha256:78459b0e0abab36a04fbc9cc93c130dd982df2c832c4dca693ca24055062ab7e",
+            "category": "logistics",
+            "custodian_at_freeze": "证据室/物流组保管柜"
+          },
+          {
+            "material_id": "M-SETTLE-01",
+            "checksum": "sha256:0de1ee8109c09c68add054ae359f7b46895db7fad52e0f3621773696d613db67",
+            "category": "settlement",
+            "custodian_at_freeze": "证据室/线索组保管柜"
+          },
+          {
+            "material_id": "M-TRACE-01",
+            "checksum": "sha256:0fb935c3286b196e03c7b6a41d0a4e0b0a73b5efc6fe4590c879d4c3edf252dc",
+            "category": "traceability",
+            "custodian_at_freeze": "证据室/线索组保管柜"
+          },
+          {
+            "material_id": "M-VIDEO-01",
+            "checksum": "sha256:678a142ac1598904aece6b5ca3e864e00bfa75411ee05c5db9f7ca7e3f7d2660",
+            "category": "surveillance",
+            "custodian_at_freeze": "证据室/监控组保管柜"
+          },
+          {
+            "material_id": "M-VIDEO-02",
+            "checksum": "sha256:0f8122a5af3a345287a9ab77e03b7e9dd9dab40301b0a015a1c84e4857a3746f",
+            "category": "surveillance",
+            "custodian_at_freeze": "证据室/监控组保管柜"
+          }
+        ],
+        "frozen_event_seq": 37,
+        "freeze_hash": "7a55d5434d3326ed238c3a823d3239e8213cc1971057dcc1195878cfc32f5298"
+      },
+      "prev_hash": "7a55d5434d3326ed238c3a823d3239e8213cc1971057dcc1195878cfc32f5298",
+      "hash": "7eebb3498197d732ee7fabe21dd9258e7dba4f88fb4418856a0ae10adc159693"
+    },
+    {
+      "seq": 38,
+      "timestamp": "2026-04-22T09:00:00+08:00",
+      "actor": "review-zheng",
+      "kind": "material_transferred",
+      "payload": {
+        "material_id": "M-FIN-01",
+        "to_custodian": "负责人复核档案柜",
+        "reason": "随印证阶段结论移送复核"
+      },
+      "prev_hash": "7eebb3498197d732ee7fabe21dd9258e7dba4f88fb4418856a0ae10adc159693",
+      "hash": "7a1066c1b7600955a46b0510bf891950b3bb65412b17e5e53c8e46df25edac92"
+    },
+    {
+      "seq": 39,
+      "timestamp": "2026-04-22T09:10:00+08:00",
+      "actor": "review-zheng",
+      "kind": "material_transferred",
+      "payload": {
+        "material_id": "M-LOG-01",
+        "to_custodian": "负责人复核档案柜",
+        "reason": "随印证阶段结论移送复核"
+      },
+      "prev_hash": "7a1066c1b7600955a46b0510bf891950b3bb65412b17e5e53c8e46df25edac92",
+      "hash": "765c1dcc4b15a2c8350ca11b4978731b1835af6c711cd7b96750195c8ba69a52"
+    }
+  ]
+}
